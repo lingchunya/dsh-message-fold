@@ -45,6 +45,7 @@
     "test": "NODE_ENV=test vitest run",
     "test:watch": "NODE_ENV=test vitest",
     "build": "tsdown && tsc -p tsconfig.build.json",
+    "prepare": "pnpm build",
     "test:bundle": "node scripts/verify-bundle.mjs",
     "verify": "pnpm typecheck && pnpm test && pnpm build && pnpm test:bundle"
   },
