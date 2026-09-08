@@ -2,14 +2,14 @@ import type { UserConfig } from 'tsdown'
 
 const PACKAGE_ID = 'dsh-message-fold'
 
-// 对齐 DSH rc.8 的隐式共享模块基线；非基线 value import 必须声明 dsh.client.external。
+// 对齐 DSH 的隐式共享模块基线；非基线 value import 必须声明 dsh.client.external。
 const clientBaselineExternals = [
   'react',
   'react/jsx-runtime',
   'react-dom',
   'react-dom/client',
   '@deepseek-ai/cordis',
-  '@deepseek-ai/dsh-client-runtime/client',
+  '@deepseek-ai/dsh-client-store',
   '@deepseek-ai/dsh-client-ui-slots',
   '@deepseek-ai/dsh-client-ui-primitives',
 ] as const

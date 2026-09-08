@@ -28,9 +28,6 @@ assert.doesNotMatch(source, /\/Users\/sutaowei\/project\/github\/deepseek-harnes
 const modules = new Map([
   ['react', await import('react')],
   ['react/jsx-runtime', await import('react/jsx-runtime')],
-  ['@deepseek-ai/dsh-client-runtime/client', {
-    conversationContextKey: (kind, id) => `${kind.length}:${kind}${id}`,
-  }],
   ['@deepseek-ai/dsh-client-ui-primitives', { IconChevronRightOutline14: () => null }],
 ])
 const exported = handoff.factory((id) => {

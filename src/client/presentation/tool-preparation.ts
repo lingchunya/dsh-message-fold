@@ -1,7 +1,9 @@
-import {
-  conversationContextKey, type ConversationSnapshot,
-} from '@deepseek-ai/dsh-client-runtime/client'
+import type { ConversationSnapshot } from '@deepseek-ai/dsh-client-runtime/client'
 import type { AssistantChatData } from '@deepseek-ai/dsh-client-ui-conversation/client'
+
+function conversationContextKey(kind: string, id: string): string {
+  return `${kind.length}:${kind}${id}`
+}
 
 type UnknownRecord = Record<string, unknown>
 

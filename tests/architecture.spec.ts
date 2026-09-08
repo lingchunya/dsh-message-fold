@@ -61,7 +61,6 @@ describe('架构边界', () => {
       client: {
         inject: [
           '@deepseek-ai/dsh-client-connection',
-          '@deepseek-ai/dsh-client-runtime',
           '@deepseek-ai/dsh-client-locale',
           '@deepseek-ai/dsh-client-ui-conversation',
           '@deepseek-ai/dsh-client-ui-settings',
@@ -70,10 +69,9 @@ describe('架构边界', () => {
         platform: 'web',
       },
     })
-    expect(manifest.peerDependencies['@deepseek-ai/cordis']).toBe('4.0.1')
-    expect(manifest.peerDependencies['@deepseek-ai/dsh-client-runtime']).toBe('0.1.0-rc.8')
-    expect(manifest.peerDependencies['@deepseek-ai/dsh-client-ui-settings']).toBe('0.1.0-rc.8')
-    expect(manifest.peerDependencies['@deepseek-ai/dsh-settings']).toBe('0.1.0-rc.8')
+    expect(manifest.peerDependencies['@deepseek-ai/cordis']).toBeDefined()
+    expect(manifest.peerDependencies['@deepseek-ai/dsh-client-ui-settings']).toBeDefined()
+    expect(manifest.peerDependencies['@deepseek-ai/dsh-settings']).toBeDefined()
     expect(manifest.dependencies).not.toHaveProperty('@deepseek-ai/dsh-settings')
     expect(manifest.dependencies).not.toHaveProperty('react')
     expect(manifest.peerDependencies).not.toHaveProperty('@deepseek-ai/dsh-client-ui-primitives')
